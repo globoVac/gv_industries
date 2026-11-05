@@ -432,6 +432,6 @@ function webtuga_publication_summary($report) {
     $text .= "\nFicheiros candidatos: " . $report['candidate_files'] . '. Ativados: ' . $report['application_files_activated'] . ".\n\n";
     if ($report['rollback_attempted']) { $text .= 'Reposicao dos originais: **' . ($report['rollback_completed'] ? 'confirmada' : 'nao confirmada; conferir a referencia de recuperacao') . "**.\n\n"; }
     $text .= "Configuracao privada preservada. Nenhuma restauracao ou importacao de banco de dados. Os testes HTTPS visitam apenas a pagina inicial e o login, sem autenticar nem enviar formularios.\n\n";
-    $text .= "Escopo desta versao: os nove ajustes iniciais revistos. A referencia gravada serve de base para preparar depois o envio incremental das alteracoes seguintes.\n";
+    $text .= "Escopo desta versao: os cinco PHP do primeiro alinhamento. A referencia gravada serve de base para o fluxo incremental das alteracoes seguintes.\n";
     return $text;
 }

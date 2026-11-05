@@ -1,0 +1,72 @@
+name: Publicar alteracoes WebTuga
+
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'Comparar, publicar as alteracoes ou recuperar uma publicacao incremental.'
+        required: true
+        type: choice
+        default: PREVIA
+        options: [PREVIA, PUBLICAR, REVERTER]
+      confirmacao:
+        description: 'PUBLICAR e REVERTER exigem a confirmacao correspondente.'
+        required: true
+        type: choice
+        default: NAO
+        options: [NAO, PUBLICAR GV, REVERTER GV]
+      codigo_previa:
+        description: 'Em PUBLICAR, copie o codigo de 64 caracteres mostrado pela PREVIA aprovada.'
+        required: false
+        type: string
+      referencia:
+        description: 'Apenas em REVERTER: referencia de recuperacao; vazia usa a ultima publicacao incremental.'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: webtuga-gv-industries
+  cancel-in-progress: false
+
+jobs:
+  alteracoes:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      WEBTUGA_INCREMENTAL_MODE: ${{ inputs.modo }}
+      WEBTUGA_INCREMENTAL_CONFIRMATION: ${{ inputs.confirmacao }}
+      WEBTUGA_INCREMENTAL_PREVIEW: ${{ inputs.codigo_previa }}
+      WEBTUGA_INCREMENTAL_REFERENCE: ${{ inputs.referencia }}
+    steps:
+      - name: Obter o historico aprovado, sem descarregar todos os ficheiros LFS
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          lfs: false
+      - name: Validar o fluxo sem ligar a hospedagem
+        run: |
+          php tests/conexao-webtuga.php
+          php tests/incremental-webtuga.php
+      - name: Comparar a versao publicada e validar a previa
+        env:
+          WEBTUGA_FTP_HOST: ${{ vars.WEBTUGA_FTP_HOST }}
+          WEBTUGA_FTP_USERNAME: ${{ secrets.WEBTUGA_FTP_USERNAME }}
+          WEBTUGA_FTP_PASSWORD: ${{ secrets.WEBTUGA_FTP_PASSWORD }}
+        run: php scripts/publicar-alteracoes-webtuga.php --fase=preparar
+      - name: Recuperar apenas os objetos LFS que serao publicados
+        if: inputs.modo == 'PUBLICAR'
+        env:
+          GH_LFS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: php scripts/publicar-alteracoes-webtuga.php --fase=materiais
+      - name: Executar a publicacao ou recuperacao manual
+        if: inputs.modo != 'PREVIA'
+        env:
+          WEBTUGA_FTP_HOST: ${{ vars.WEBTUGA_FTP_HOST }}
+          WEBTUGA_FTP_USERNAME: ${{ secrets.WEBTUGA_FTP_USERNAME }}
+          WEBTUGA_FTP_PASSWORD: ${{ secrets.WEBTUGA_FTP_PASSWORD }}
+        run: php scripts/publicar-alteracoes-webtuga.php --fase=executar

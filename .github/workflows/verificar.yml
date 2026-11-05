@@ -27,3 +27,5 @@ jobs:
         run: php tests/conferencia-webtuga.php
       - name: Conferir publicacao e recuperacao sem rede
         run: php tests/publicacao-webtuga.php
+      - name: Conferir alteracoes incrementais sem rede
+        run: php tests/incremental-webtuga.php

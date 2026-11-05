@@ -62,7 +62,9 @@ alinhamento sem alterar o site. Consultar
 
 O primeiro alinhamento tem um workflow manual com previa, copias verificadas e
 recuperacao: [PUBLICACAO-INICIAL-WEBTUGA.md](docs/PUBLICACAO-INICIAL-WEBTUGA.md).
-O fluxo esta preparado; a primeira ativacao e a sua conferencia real continuam
-pendentes. Alteracoes futuras precisam do fluxo incremental.
+O primeiro alinhamento foi concluido: cinco PHP ativados em 05/11/2026, com
+configuracao privada preservada. As atualizacoes seguintes usam **Publicar
+alteracoes WebTuga**, com `codigo_previa` e recuperacao propria:
+[PUBLICACAO-ALTERACOES-WEBTUGA.md](docs/PUBLICACAO-ALTERACOES-WEBTUGA.md).
 Nao copiar o repositorio inteiro para o servidor: `.git`, ferramentas, testes,
 documentacao e workflows nao fazem parte dos ficheiros publicos do site.
