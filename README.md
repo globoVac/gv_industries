@@ -60,7 +60,9 @@ O workflow manual **Conferir ficheiros WebTuga** compara os candidatos do primei
 alinhamento sem alterar o site. Consultar
 [CONFERENCIA-WEBTUGA.md](docs/CONFERENCIA-WEBTUGA.md).
 
-A introducao do perfil privado na WebTuga e a publicacao manual das alteracoes
-ainda precisam de ser preparadas e verificadas apos o teste de ligacao.
+O primeiro alinhamento tem um workflow manual com previa, copias verificadas e
+recuperacao: [PUBLICACAO-INICIAL-WEBTUGA.md](docs/PUBLICACAO-INICIAL-WEBTUGA.md).
+O fluxo esta preparado; a primeira ativacao e a sua conferencia real continuam
+pendentes. Alteracoes futuras precisam do fluxo incremental.
 Nao copiar o repositorio inteiro para o servidor: `.git`, ferramentas, testes,
 documentacao e workflows nao fazem parte dos ficheiros publicos do site.

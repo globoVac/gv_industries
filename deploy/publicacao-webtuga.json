@@ -1,0 +1,13 @@
+{
+    "version":  1,
+    "domain":  "gvi",
+    "scope":  "alinhamento-inicial-cinco-ficheiros",
+    "private_config_sha256":  "e5a5f067cb301351f1c9e59d07860997467631fd26c01e971af456337fd4343e",
+    "activation_order":  [
+                             "backoffice/includes/database.php",
+                             "includes/config.php",
+                             "includes/database.php",
+                             "includes/mail.php",
+                             "backoffice/includes/config.php"
+                         ]
+}

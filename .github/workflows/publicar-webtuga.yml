@@ -1,0 +1,62 @@
+name: Publicacao manual WebTuga
+
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'Primeiro alinhamento: apenas os cinco PHP revistos.'
+        required: true
+        type: choice
+        default: PREVIA
+        options:
+          - PREVIA
+          - DIAGNOSTICO
+          - PUBLICAR
+          - REVERTER
+      confirmacao:
+        description: 'Publicar ou reverter exige a confirmacao correspondente.'
+        required: true
+        type: choice
+        default: NAO
+        options:
+          - NAO
+          - PUBLICAR GV
+          - REVERTER GV
+      referencia:
+        description: 'Para diagnosticar ou recuperar uma tentativa, informe a referencia do resumo.'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: webtuga-gv-industries
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Obter a versao revista
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          lfs: false
+      - name: Validar sem ligar a hospedagem
+        run: |
+          php -n tests/configuracao.php
+          php tests/conexao-webtuga.php
+          php tests/conferencia-webtuga.php
+          php tests/publicacao-webtuga.php
+      - name: Executar a operacao manual selecionada
+        env:
+          WEBTUGA_FTP_HOST: ${{ vars.WEBTUGA_FTP_HOST }}
+          WEBTUGA_FTP_USERNAME: ${{ secrets.WEBTUGA_FTP_USERNAME }}
+          WEBTUGA_FTP_PASSWORD: ${{ secrets.WEBTUGA_FTP_PASSWORD }}
+          WEBTUGA_PUBLICATION_MODE: ${{ inputs.modo }}
+          WEBTUGA_PUBLICATION_CONFIRMATION: ${{ inputs.confirmacao }}
+          WEBTUGA_PUBLICATION_RELEASE: ${{ inputs.referencia }}
+        run: php scripts/publicar-webtuga.php

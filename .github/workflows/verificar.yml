@@ -25,3 +25,5 @@ jobs:
         run: php tests/conexao-webtuga.php
       - name: Conferir comparacao de ficheiros sem rede
         run: php tests/conferencia-webtuga.php
+      - name: Conferir publicacao e recuperacao sem rede
+        run: php tests/publicacao-webtuga.php
