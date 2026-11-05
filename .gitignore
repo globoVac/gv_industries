@@ -1,0 +1,40 @@
+# Configuracao privada de cada ambiente.
+/config/local.php
+/.htaccess
+/backoffice/.htaccess
+/.local-backup/
+/.local-tools/
+/.local-releases/
+.env
+.env.*
+!.env.example
+auth.json
+*.pem
+*.key
+
+# Dependencias instaladas com composer install e dados gerados pelo servidor.
+/vendor/
+/cache/
+/.well-known/acme-challenge/
+/cgi-bin/
+/assets/uploads/
+/uploads/
+node_modules/
+error_log
+*.log
+*.tmp
+*.bak
+*.old
+*.sql
+*.sql.gz
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+
+# Preferencias locais.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,238 @@
+/* Solution-page styles reused from Globovac; isolated from the GV header and footer. */
+.solution-page .banner-img img {
+  width: 1320px;
+}
+
+.solution-page .explain,
+.solution-page .beneficio,
+.solution-page .video,
+.solution-page .novidade,
+.solution-page .info-produto,
+.solution-page .faq,
+.solution-page .cta {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.solution-page .text {
+  text-align: justify;
+}
+
+.solution-page .cta {
+  padding-bottom: 100px;
+}
+
+.solution-page .info-produto h2 {
+  font-weight: 300;
+  line-height: 1.118;
+  font-weight: 400;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.solution-page .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-size: 48px; 
+}
+
+.solution-page .benefit-list {
+  list-style: none;
+  padding: 0;
+}
+
+.solution-page .benefit-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.solution-page .benefit-list i {
+  margin-right: 10px;
+}
+
+.solution-page .btn-outline-aspiracao {
+  color: #ea580d;
+  border-color: #ea580d;
+  background-color: transparent;
+}
+
+.solution-page .btn-outline-aspiracao:hover {
+  color: #fff; 
+  background-color: #ea580d; 
+  border-color: #ea580d;
+}
+
+.solution-page .left-aspiracao {
+  background-color: #feeedc;
+  text-align: center;
+  padding: 60px;
+  position: relative;
+}
+
+.solution-page .left-aspiracao h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 400;
+  z-index: 200;
+}
+
+.solution-page .double-aspiracao {
+  position: absolute;
+  top: 30%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  white-space: nowrap;
+  color: #ffe0bd;
+  z-index: 199;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.solution-page .right-aspiracao {
+  padding: 40px;
+}
+
+.solution-page .right-aspiracao h4 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.solution-page .beneficio-item {
+  padding: 10px;
+  text-align: center;
+  height: 100%;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+
+.solution-page .banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-page .banner-img {
+  position: relative;
+}
+
+.solution-page .banner-img img {
+  width: 100%;
+  height: auto;
+}
+
+.solution-page .left-aspiracao { overflow: hidden; isolation: isolate; }
+.solution-page video { display: block; max-width: 100%; height: auto; }
+
+/* Ventilation styles reused from the original Globovac page. */
+.solution-page .fabricante {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.solution-page #faqVent .accordion-button:not(.collapsed) {
+  color:#3c3c3b;
+  background-color: #eef1e7; 
+}
+
+.solution-page .btn-outline-ventilacao {
+  color: #57b039;
+  border-color: #57b039;
+  background-color: transparent;
+}
+
+.solution-page .btn-outline-ventilacao:hover {
+  color: #fff; 
+  background-color: #57b039; 
+  border-color: #57b039;
+}
+
+.solution-page .left-ventilacao {
+  background-color: #eef1e7;
+  text-align: center;
+  padding: 60px;
+  position: relative;
+}
+
+.solution-page .left-ventilacao h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 400;
+  z-index: 200;
+}
+
+.solution-page .double-ventilacao {
+  position: absolute;
+  top: 30%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  white-space: nowrap;
+  color: #c9e68a;
+  z-index: 199;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.solution-page .right-ventilacao {
+  padding: 40px;
+}
+
+.solution-page .right-ventilacao h4 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.solution-page .left-ventilacao { overflow: hidden; isolation: isolate; }
+
+/* Laundry Jet styles reused from the original Globovac page. */
+.solution-page #faqLjet .accordion-button:not(.collapsed) {
+  color:#3c3c3b;
+  background-color: #ebf4f5; 
+}
+
+.solution-page .btn-outline-laundry {
+  color: #3bacb6;
+  border-color: #3bacb6;
+  background-color: transparent;
+}
+
+.solution-page .btn-outline-laundry:hover {
+  color: #fff; 
+  background-color: #3bacb6; 
+  border-color: #3bacb6;
+}
+
+.solution-page .left-laundry {
+  background-color: #ebf4f5;
+  text-align: center;
+  padding: 60px;
+  position: relative;
+}
+
+.solution-page .left-laundry h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 400;
+  z-index: 200;
+}
+
+.solution-page .double-laundry {
+  position: absolute;
+  top: 30%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  white-space: nowrap;
+  color: #8bced0;
+  z-index: 199;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.solution-page .right-laundry {
+  padding: 40px;
+}
+
+.solution-page .right-laundry h4 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.solution-page .left-laundry { overflow: hidden; isolation: isolate; }

@@ -1,0 +1,31 @@
+name: Testar ligacao WebTuga
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: webtuga-gv-industries
+  cancel-in-progress: false
+
+jobs:
+  testar:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Obter codigo
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          lfs: false
+      - name: Verificar consulta sem acesso externo
+        run: php tests/conexao-webtuga.php
+      - name: Consultar a pasta do site por FTPS
+        env:
+          WEBTUGA_FTP_HOST: ${{ vars.WEBTUGA_FTP_HOST }}
+          WEBTUGA_FTP_USERNAME: ${{ secrets.WEBTUGA_FTP_USERNAME }}
+          WEBTUGA_FTP_PASSWORD: ${{ secrets.WEBTUGA_FTP_PASSWORD }}
+        run: php scripts/testar-conexao-webtuga.php
