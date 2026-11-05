@@ -56,6 +56,10 @@ O workflow manual **Testar ligacao WebTuga** consulta a pasta por FTPS e valida 
 certificado. Nao publica ficheiros. A configuracao desse acesso esta em
 [CONEXAO-WEBTUGA.md](docs/CONEXAO-WEBTUGA.md).
 
+O workflow manual **Conferir ficheiros WebTuga** compara os candidatos do primeiro
+alinhamento sem alterar o site. Consultar
+[CONFERENCIA-WEBTUGA.md](docs/CONFERENCIA-WEBTUGA.md).
+
 A introducao do perfil privado na WebTuga e a publicacao manual das alteracoes
 ainda precisam de ser preparadas e verificadas apos o teste de ligacao.
 Nao copiar o repositorio inteiro para o servidor: `.git`, ferramentas, testes,

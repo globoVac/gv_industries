@@ -1,0 +1,61 @@
+{
+    "version": 1,
+    "domain": "gv-industries.co.uk",
+    "backup_date": "2026-11-05",
+    "files": [
+        {
+            "path": "includes/config.php",
+            "kind": "application",
+            "backup_sha256": "27da96fd4687b3d0e613c1b95124d160dd7b490656e7675736b702f73d885867",
+            "git_sha256": "1e9824f13de0e36fbfb9ea110d0242ccbabc8898a40758e79cdd076725e6380b"
+        },
+        {
+            "path": "includes/database.php",
+            "kind": "application",
+            "backup_sha256": "19185989d019a494d236a3cbe2c4ab5a19d97adab7e2bda87ec09817b980d65d",
+            "git_sha256": "bb29f1db55345988a2cab726a28e6c9f7eff81c2e2579dc5f5b144eab3158750"
+        },
+        {
+            "path": "includes/mail.php",
+            "kind": "application",
+            "backup_sha256": "06dfd4b9d49a31cbd85a2d32b5b4908217a9110a9a8faa02aff2a48ef6de06ed",
+            "git_sha256": "6a88bcae17e3fdcb9dce5bd69a3da61596c9fd4041eeb9d19f80526902c065ef"
+        },
+        {
+            "path": "backoffice/includes/config.php",
+            "kind": "application",
+            "backup_sha256": "57851bc8f98b93e1af9d6f2d6efcb320146832c5bc67c87d6344c71b70271d60",
+            "git_sha256": "5029064f32f70de1076ebe1f9c0b56231cc83babecd39774dfce17ce67ec46dd"
+        },
+        {
+            "path": "backoffice/includes/database.php",
+            "kind": "application",
+            "backup_sha256": "d57209806febbae93f87ccf0599dc3b700b363a0f2b7fab54c53e9c67004c74c",
+            "git_sha256": "4cef1ab6b29beb6768efc32bb6a93d4d01748d4dcc3e66709c9b48b51372f3e7"
+        },
+        {
+            "path": "config/.htaccess",
+            "kind": "configuration_support",
+            "backup_sha256": null,
+            "git_sha256": "fa28d421a28ed9b6f4b997d5119c2b8adbacff6e2dd119a179b71230f9664934"
+        },
+        {
+            "path": "config/bootstrap.php",
+            "kind": "configuration_support",
+            "backup_sha256": null,
+            "git_sha256": "a5aae445f290798b760c9b5114dc61b5eab78b20c7a28eabe660cd32625aab87"
+        },
+        {
+            "path": "config/database.php",
+            "kind": "configuration_support",
+            "backup_sha256": null,
+            "git_sha256": "454f3cf6fc6c052e1489e31878fa0ebbba82222cceeb771ca1436a88a1015df5"
+        },
+        {
+            "path": ".htaccess",
+            "kind": "preserved",
+            "backup_sha256": "7480ac1bfb7c641e7326cfe9026d103fd7b7779420492302c155b663f069a73d",
+            "git_sha256": null
+        }
+    ]
+}

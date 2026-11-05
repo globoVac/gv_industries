@@ -23,3 +23,5 @@ jobs:
         run: php -n tests/configuracao.php
       - name: Conferir ferramenta de ligacao sem rede
         run: php tests/conexao-webtuga.php
+      - name: Conferir comparacao de ficheiros sem rede
+        run: php tests/conferencia-webtuga.php
