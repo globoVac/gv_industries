@@ -6,3 +6,23 @@
 *.css text eol=lf
 *.js text eol=lf
 /assets/video/*.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# Conservar os bytes CRLF dos ficheiros originais ja existentes na WebTuga.
+/404.php -text !eol
+/assets/css/solutions.css -text !eol
+/backoffice/includes/auth.php -text !eol
+/backoffice/login.php -text !eol
+/backoffice/logout.php -text !eol
+/contact.php -text !eol
+/cookies.php -text !eol
+/includes/auth.php -text !eol
+/includes/footer.php -text !eol
+/includes/header.php -text !eol
+/info-central-vacuum.php -text !eol
+/info-laundry-jet.php -text !eol
+/info-ventilation-systems.php -text !eol
+/login.php -text !eol
+/logout.php -text !eol
+/privacy-policy.php -text !eol
+/register.php -text !eol
+/terms.php -text !eol
