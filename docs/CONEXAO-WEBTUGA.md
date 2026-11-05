@@ -13,8 +13,8 @@ A raiz vista por essa conta deve ser `/`, ja correspondente ao `public_html`.
 
 No GitHub, abrir **Settings > Secrets and variables > Actions**:
 
-- Em **Variables**, criar `WEBTUGA_FTP_HOST`: hostname do servidor indicado na
-  Informacao de Servico da WebTuga, sem `https://`, porta ou caminho do cPanel.
+- Em **Variables**, criar `WEBTUGA_FTP_HOST`: `cp69.redewt.net`, sem `https://`,
+  porta ou caminho do cPanel. Este nome corresponde ao certificado FTPS.
 - Em **Secrets**, criar `WEBTUGA_FTP_USERNAME`: utilizador completo da conta dedicada.
 - Em **Secrets**, criar `WEBTUGA_FTP_PASSWORD`: palavra-passe dessa conta.
 
@@ -22,6 +22,11 @@ Nao guardar a palavra-passe em ficheiros, commits, comentarios ou mensagens.
 O teste passa a credencial apenas pelo stdin do curl, sem a colocar em argumentos
 do processo ou logs. O certificado deve ser validado; o cliente exige FTPS
 explicito na porta 21, com TLS 1.2 ou superior.
+
+Em 05/11/2026 foi validado o certificado de `cp69.redewt.net` por TLS 1.3,
+sem tentativa de login. O nome `ftp.gv-industries.co.uk` aponta para o mesmo
+servidor, mas o certificado apresentado esta emitido apenas para
+`cp69.redewt.net`. Usar o hostname validado, mantendo a verificacao do certificado.
 
 ## Executar e interpretar
 
